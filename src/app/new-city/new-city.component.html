@@ -1,0 +1,38 @@
+<div class=" flex justify-center">
+    <div class="w-full max-w-xs">
+        <form [formGroup]="formulaire" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <label for="ville" class="block text-gray-700 text-sm font-bold mb-2">ville : </label>
+            <input id="ville" type="text" formControlName="ville"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            <label for="imageTemps" class="mb-1 block text-sm font-medium text-gray-700">Upload file</label>
+            <input id="imageTemps" type="file" formControlName="imageTemps"
+                class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-teal-500 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+            <label for="temperatureActuelle" class="block text-gray-700 text-sm font-bold mb-2">Temperature Actuelle :
+            </label>
+            <input id="temperatureActuelle" type="text" formControlName="temperatureActuelle"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            <label for="typeTemps" class="block text-gray-700 text-sm font-bold mb-2">Type de temps : </label>
+            <input id="typeTemps" type="text" formControlName="typeTemps"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            <label for="temperatureMax" class="block text-gray-700 text-sm font-bold mb-2">Temperature maximale :
+            </label>
+            <input id="temperatureMax" type="text" formControlName="temperatureMax"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            <label for="temperatureMin" class="block text-gray-700 text-sm font-bold mb-2">Temperature minimale :
+            </label>
+            <input id="temperatureMin" type="text" formControlName="temperatureMin"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            <button type="submit"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Valider
+            </button>
+            <button (click)="saveToLocalStorage()">Save to Local Storage</button>
+            <button (click)="retrieveFromLocalStorage()">Retrieve from Local Storage</button>
+        </form>
+    </div>
+</div>
