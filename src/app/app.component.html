@@ -5,5 +5,22 @@
         <app-details class="h-full w-full"></app-details>
     </div>
 </div> -->
-<app-new-city></app-new-city>
+
+<!-- <table *ngFor="let city of cities">
+    <tr>
+        <td>{{city.name}}</td>
+    </tr>
+</table>
+<button (click)="addCity()">Ajout de ville</button>
+<app-new-city></app-new-city> -->
+<h1>Angular Router App</h1>
+<nav>
+  <ul>
+    <li><a routerLink="/app-home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
+    <li><a routerLink="/app-details" routerLinkActive="active" ariaCurrentWhenActive="page">Detail</a></li>
+    <li><a routerLink="/app-add-card" routerLinkActive="active" ariaCurrentWhenActive="page">New1</a></li>
+    <li><a routerLink="/app-new-city" routerLinkActive="active" ariaCurrentWhenActive="page">New2</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>

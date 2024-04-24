@@ -9,7 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {NewCityComponent } from './new-city/new-city.component'
 import { Store, StoreModule } from '@ngrx/store';
 import { allCities } from './store/city.selectors';
-import { loadCities } from './store/city.actions';
+import { insertCity, loadCities } from './store/city.actions';
+import { City } from './models/city';
 
 
 @Component({
@@ -21,12 +22,18 @@ import { loadCities } from './store/city.actions';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  visible = false
+  cities: City[]=[]
   constructor(private store: Store){}
   ngOnInit(): void {
     this.store.select(allCities).subscribe((cities)=>{
+      this.cities = cities
       console.log(cities)
     })
     this.store.dispatch(loadCities())
+  }
+  addCity(){
+    this.store.dispatch(insertCity({ city:{id : '31860', name : 'Pins-Justaret', country : 'France'}}))
   }
   title = 'Météo';
 }
